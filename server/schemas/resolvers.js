@@ -15,12 +15,12 @@ const resolvers = {
     },
     Mutation: {
         createUser: async (parent, { username, email, password }) => {
-            const user = await User.create({ username, email, password });
+            const user = await User.create({ username, email, password }).populate('savedBooks');
             const token = signToken(user);
             return { token, user };
         },
         login: async (parent, { email, password }) => {
-            const user = await User.findOne({ email });
+            const user = await User.findOne({ email }).populate('savedBooks');
             if (!user) {
                 throw new AuthenticationError("Can't find this user");
             }
@@ -37,7 +37,7 @@ const resolvers = {
                     {_id: context.user._id},
                     {$addToSet: {savedBooks: {authors, description, bookId, image, link, title}}},
                     { new: true, runValidators: true}
-                );
+                ).populate('savedBooks');
             }
             throw new AuthenticationError('No user logged in.');
         },
@@ -47,7 +47,7 @@ const resolvers = {
                     {_id: context.user._id},
                     {$pull: {savedBooks: {bookId: bookId}}},
                     { new: true }
-                );
+                ).populate('savedBooks');
             }
             throw new AuthenticationError('No user logged in.');
         }
