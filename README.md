@@ -8,6 +8,7 @@ On this website we use graphql to handle all requests between client side and se
 ## Table of Contents
 
 * [Technologies](#technologies)
+* [Link](#link)
 * [Installation](#installation)
 * [Usage](#usage)
 * [Questions](#questions)
@@ -20,12 +21,20 @@ On this website we use graphql to handle all requests between client side and se
 | HTML |   |
 | Javascript |    |
 | React | https://reactjs.org/ |
+| graphql | https://graphql.org/ |
+| apollo | https://www.apollographql.com/ |
 | Node.js | https://nodejs.org/en/ |
 | npm | https://www.npmjs.com/ |
+| jwt | https://jwt.io/ |
+| bcrypt | https://www.npmjs.com/package/bcrypt |
 
 ## Installation
 
-If you want to run this project on your local machine just clone the repository and run npm install. From there all you need to do is type npm run develop to launch the server and the client side react site. You will need to have mongoDB running as well since this project uses mongodb to handle CRUD operations.
+If you want to run this project on your local machine just clone the repository and run npm install. From there all you need to do is type npm run develop to launch the server and the client side react site. You will need to have mongoDB running as well since this project uses mongodb to handle CRUD operations.  
+
+## Link
+
+https://sleepy-journey-91001.herokuapp.com/
 
 ## Usage
 
